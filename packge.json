@@ -1,0 +1,14 @@
+{
+  "name": "hydrogrow",
+  "version": "1.0.0",
+  "description": "Automated Soilless Vertical Garden",
+  "main": "main.py",
+  "scripts": {
+    "install-deps": "pip install -r requirements.txt",
+    "compile": "py_compile_script.py",
+    "write-code": "ampy -p /dev/tty.SLAB_USBtoUART put main.py",
+    "flash-micropython": "esptool.py --port /dev/tty.SLAB_USBtoUART erase_flash && esptool.py --port /dev/tty.SLAB_USBtoUART --baud 460800 write_flash --flash_size=detect 0 micropython.bin"
+  },
+  "author": "Zach Robichaud",
+  "license": "MIT"
+}

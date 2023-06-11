@@ -1,0 +1,15 @@
+# JetBrains IDE
+.idea/
+
+# Compiled python files
+__pycache__/
+
+# MicroPython related
+*.mpy
+
+# Other unnecessary files
+*.log
+*.bak
+*.swp
+*~
+*.pyc
