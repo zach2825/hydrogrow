@@ -1,0 +1,14 @@
+{
+  "name": "hydrogrow",
+  "version": "1.0.0",
+  "description": "Automated Soilless Vertical Garden",
+  "main": "main.py",
+  "scripts": {
+    "install-deps": "pip install -r requirements.txt",
+    "write-code": "sh ./scripts/write_code.sh",
+    "flash-micropython": "sh ./scripts/flash_micropython.sh",
+    "device:detect-linux": "sh ./scripts/device-detect.linux.sh"
+  },
+  "author": "Zach Robichaud",
+  "license": "MIT"
+}

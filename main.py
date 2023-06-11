@@ -1,25 +1,12 @@
-import machine
 import time
 from umqtt.simple import MQTTClient
 import network
-
-# WiFi settings
-ssid = 'your_SSID'
-password = 'your_password'
-
-# MQTT settings
-mqtt_server = 'your_mqtt_server'
-topic_pub = 'your_topic_pub'
-
-# Sensor settings
-water_level_pin = machine.ADC(0)  # Assuming water level sensor is on A0
-mineral_level_pin = machine.ADC(2)  # Assuming mineral level sensor is on A2
-pump_relay_pin = machine.Pin(5, machine.Pin.OUT)  # Assuming relay is on D1
+import config
 
 # Connect to WiFi
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect(ssid, password)
+wlan.connect(config.ssid, config.password)
 
 while not wlan.isconnected():
     time.sleep(1)
@@ -27,7 +14,7 @@ while not wlan.isconnected():
 print('WiFi connected')
 
 # Connect to MQTT Server
-client = MQTTClient("umqtt_client", mqtt_server)
+client = MQTTClient("umqtt_client", config.mqtt_server)
 client.connect()
 
 print('MQTT connected')
@@ -35,21 +22,22 @@ print('MQTT connected')
 
 # Publish sensor data
 def publish_sensor_data():
-    water_level: object = water_level_pin.read()
-    mineral_level = mineral_level_pin.read()
+    # noinspection PyShadowingNames
+    water_level: object = config.water_level_pin.read()
+    mineral_level = config.mineral_level_pin.read()
     data = {'water_level': water_level, 'mineral_level': mineral_level}
-    client.publish(topic_pub, str(data))
+    client.publish(config.topic_pub, str(data))
 
 
 # Control the water pump
 def control_pump(state):
-    pump_relay_pin.value(state)
+    config.pump_relay_pin.value(state)
 
 
 while True:
     try:
         publish_sensor_data()
-        water_level = water_level_pin.read()
+        water_level = config.water_level_pin.read()
 
         # Simple logic: turn on pump if water level is low, turn off if high
         if water_level < 500:

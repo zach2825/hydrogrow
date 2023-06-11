@@ -2,7 +2,7 @@
 
 HydroGrow is an automated system for maintaining a soilless vertical garden. Using an ESP8266 microcontroller, HydroGrow automates the task of watering plants, and monitors the water level and mineral content in real-time. The system also provides remote monitoring through MQTT messaging protocol, allowing the data to be observed in a user-friendly interface provided by Home Assistant.
 
-## Hardware Requirements
+## Hardware Needed
 
 1. ESP8266 Development Board (NodeMCU)
 2. Water Pump
@@ -22,13 +22,14 @@ HydroGrow is an automated system for maintaining a soilless vertical garden. Usi
 
 ## Setup Instructions
 
-1. Setup your hardware as per your garden's requirement.
-2. Flash the MicroPython firmware onto the ESP8266.
-3. Adjust the pin settings in the MicroPython script according to your hardware setup.
-4. Update your WiFi and MQTT broker details in the script.
-5. Run the script on ESP8266.
-6. The system should now be reading sensor data, controlling the pump, and publishing sensor data to your MQTT broker.
-7. Configure Home Assistant to subscribe to your MQTT topics to get live updates from your garden.
+1. Copy config.py.example to config.py and update the values in config.py with your own.
+2. Setup your hardware as per your garden's requirement.
+3. Flash the MicroPython firmware onto the ESP8266.
+4. Adjust the pin settings in the MicroPython script according to your hardware setup.
+5. Update your WiFi and MQTT broker details in the script.
+6. Run the script on ESP8266.
+7. The system should now be reading sensor data, controlling the pump, and publishing sensor data to your MQTT broker.
+8. Configure Home Assistant to subscribe to your MQTT topics to get live updates from your garden.
 
 ## Functionality
 
