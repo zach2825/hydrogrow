@@ -104,6 +104,15 @@ Table from here - https://randomnerdtutorials.com/esp8266-pinout-reference-gpios
 | A0    | ADC0   | Analog Input  | X                     |                                                                   |
 
 
+## After connection the device will broadcast json to the specified mqtt channel
+
+sample json is
+```json
+{
+   "water_level": 1
+}
+```
+
 ## License
 
 MIT License
