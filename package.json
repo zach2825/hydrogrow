@@ -4,6 +4,7 @@
   "description": "Automated Soilless Vertical Garden",
   "main": "main.py",
   "scripts": {
+    "monitor": "sh ./scripts/monitor.sh",
     "install-deps": "pip install -r requirements.txt",
     "write-code": "sh ./scripts/write_code.sh",
     "flash-micropython": "sh ./scripts/flash_micropython.sh",

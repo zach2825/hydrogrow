@@ -1,4 +1,4 @@
-import machine
+from machine import ADC, Pin
 
 # WiFi settings
 ssid = 'your_SSID'
@@ -7,8 +7,10 @@ password = 'your_password'
 # MQTT settings
 mqtt_server = 'your_mqtt_server'
 topic_pub = 'your_topic_pub'
+homeassistant_discovery_prefix = 'homeassistant'
 
 # Sensor settings
-water_level_pin = machine.ADC(0)  # Assuming water level sensor is on A0
-mineral_level_pin = machine.ADC(2)  # Assuming mineral level sensor is on A2
-pump_relay_pin = machine.Pin(5, machine.Pin.OUT)  # Assuming relay is on D1
+pump_relay_pin = Pin(5, Pin.OUT)  # Assuming relay is on D1
+
+# https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/
+water_level_pin = ADC(0)  # Assuming water level sensor is on A0

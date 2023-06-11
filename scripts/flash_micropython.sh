@@ -14,7 +14,7 @@ command -v esptool.py >/dev/null 2>&1 || { echo >&2 "The esptool.py command is r
 # Download micropython.bin if it's not present
 if [ ! -f micropython.bin ]; then
     echo "micropython.bin not found. Downloading..."
-    curl -LO http://micropython.org/download/esp8266/micropython.bin
+    curl -L https://micropython.org/resources/firmware/esp8266-1m-20230426-v1.20.0.bin -o micropython.bin
 fi
 
 # Flash micropython.bin to the ESP8266
