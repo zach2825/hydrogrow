@@ -5,6 +5,9 @@ automates the task of watering plants, and monitors the water level and mineral 
 provides remote monitoring through MQTT messaging protocol, allowing the data to be observed in a user-friendly
 interface provided by Home Assistant.
 
+![image](https://github.com/zach2825/hydrogrow/assets/4049321/3107d459-26d3-42e1-9572-b815df4c2811)
+
+
 ## Hardware Needed
 
 1. ESP8266 Development Board (NodeMCU)
